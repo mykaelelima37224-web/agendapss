@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F8F7F4;
+  --color-ink: #1A1A1A;
+  --color-accent: #4F46E5;
+  --color-muted: #8E8E93;
+  --color-line: #E5E5E5;
+  
+  --font-serif: "Georgia", serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans antialiased selection:bg-accent selection:text-white;
+  }
+  
+  h1, h2, h3, .font-serif {
+    @apply font-serif;
+  }
+}
+
+.oversized-number {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(10rem, 20vw, 20rem);
+  line-height: 1;
+  opacity: 0.05;
+  pointer-events: none;
+  position: absolute;
+  top: -2rem;
+  right: 2rem;
+  z-index: 0;
+}
+
+.timeline-line {
+  @apply relative pl-8 border-l border-line;
+}
